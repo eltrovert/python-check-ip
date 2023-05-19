@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: |
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          docker build -t asia.gcr.io/$PROJECT_ID/$IMAGE_NAME:${TIMESTAMP}
+          docker build -t asia.gcr.io/$PROJECT_ID/$IMAGE_NAME:${TIMESTAMP} .
       
       - name: Login to Registry
         run: gcloud auth configure-docker --quiet
