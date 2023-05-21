@@ -1,18 +1,17 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
-import logging
+
+
 
 app = Flask(__name__)
 @app.route('/', methods=["GET"])
 def hello_world():
-    app.logger.info('this is an INFO message')
-    return jsonify({'version': "10000000000004", 'ip': request.environ['HTTP_X_FORWARDED_FOR'],'methods':'GET', 'ip3':str(request.headers)}), 200
+    return jsonify({'version': "10000000000005", 'ip': request.environ['HTTP_X_FORWARDED_FOR'],'methods':'GET', 'ip3':str(request.headers)}), 200
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-else:
-    gunicorn_logger = logging.getLogger('gunicorn.error')
-    app.logger.handlers = gunicorn_logger.handlers
-    app.logger.setLevel(gunicorn_logger.level)
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+print("Hello")
+   
