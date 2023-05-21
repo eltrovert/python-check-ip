@@ -12,8 +12,8 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    application.run(debug=True)
+    app.run(debug=True)
 else:
     gunicorn_logger = logging.getLogger('gunicorn.error')
-    application.logger.handlers = gunicorn_logger.handlers
-    application.logger.setLevel(gunicorn_logger.level)
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
