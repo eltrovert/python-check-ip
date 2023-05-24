@@ -7,7 +7,7 @@ from flask import request
 app = Flask(__name__)
 @app.route('/', methods=["GET"])
 def hello_world():
-    return jsonify({'version': "10000000000006", 'ip': request.environ['HTTP_X_FORWARDED_FOR'],'methods':'GET', 'ip3':str(request.headers)}), 200
+    return jsonify({'version': "10000000000007", 'ip': request.environ['HTTP_X_FORWARDED_FOR'],'methods':'GET', 'ip3':str(request.headers)}), 200
 
 
 if __name__ == "__main__":
